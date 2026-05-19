@@ -28,7 +28,7 @@ jobs:
         pip install requests google-cloud-bigquery pytz
 
     - name: Create GCP Keys File from Secret
-      uses: jason2bytes/output-to-file@v1
+      uses: jason2bytes/output-to-file@v1.0.3
       with:
         filename: 'bigquery-keys.json'
         content: ${{ secrets.GCP_KEYS_JSON }}
