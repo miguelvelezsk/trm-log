@@ -28,8 +28,10 @@ jobs:
         pip install requests google-cloud-bigquery pytz
 
     - name: Create GCP Keys File from Secret
-      run: |
-        echo "${{ secrets.GCP_KEYS_JSON }}" > bigquery-keys.json
+      uses: jason2bytes/output-to-file@v1
+      with:
+        filename: 'bigquery-keys.json'
+        content: ${{ secrets.GCP_KEYS_JSON }}
 
     - name: Run Pipeline Script
       run: |
