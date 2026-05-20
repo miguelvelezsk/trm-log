@@ -2,7 +2,7 @@ name: Run Daily TRM Scraper
 
 on:
   schedule:
-    - cron: "0 13 * * *"
+    - cron: "17 16 * * *"
   workflow_dispatch:
 
 env:
