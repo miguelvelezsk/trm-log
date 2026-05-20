@@ -29,7 +29,9 @@ jobs:
 
     - name: Create GCP Keys File from Secret
       run: |
-        echo "${{ secrets.GCP_KEYS_JSON }}" > bigquery-keys.json
+        cat << 'EOF' > bigquery-keys.json
+        ${{ secrets.GCP_KEYS_JSON }}
+        EOF
 
     - name: Run Pipeline Script
       run: |
